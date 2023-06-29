@@ -5,8 +5,22 @@
     <h1>Welcome Page</h1>
     <div class="row g-4">
         <div class="col">
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, delectus ad esse illum omnis earum eligendi sint a minus quasi, inventore nulla autem. Maxime voluptatem eligendi veniam voluptates. Soluta, sunt!</p>
+            <div class="containerCard">
+                @foreach ($comics as $comic)
+                <div class="card" style="width: 18rem;">
+                    <img src="{{$comic['thumb']}}" class="card-img-top" alt="{{$comic['title']}}">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$comic['title']}}</h5>
+                      <ul>
+                        @foreach ($comic['artists'] as $artist)
+                        <li>{{$artist}}</li>
+                            
+                        @endforeach
+                      </ul>
+                    </div>
+                  </div>
+                    
+                @endforeach 
             </div>
         </div>
     </div>
