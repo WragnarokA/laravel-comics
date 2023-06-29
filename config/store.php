@@ -15,5 +15,11 @@ return [
             "text" => "Documentation",
         ]
     ],
-    'someOtherData' => [ 42, 37, 73],
+    'someOtherData' => [42, 37, 73],
+    'listaImg' => [
+
+        "resources/img/buy-comics-digital-comics.png",
+        "resources/img/buy-comics-merchandise.png",
+        "resources/img/buy-comics-shop-locator.png",
+    ]
 ];

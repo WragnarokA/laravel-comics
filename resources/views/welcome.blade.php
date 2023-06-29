@@ -5,20 +5,29 @@
     <h1>Welcome Page</h1>
     <div class="row g-4">
         <div class="col">
+            @foreach (config("store.listaImg") as $immagine)
+                <img src="{{Vite::asset($immagine)}}" alt="">
+            
+            @endforeach
+            <img src="{{Vite::asset('resources/img/cta-icons.png')}}" alt="">
+
+
             <div class="containerCard">
+
+
                 @foreach ($comics as $comic)
-                <div class="card" style="width: 18rem;">
-                    <img src="{{$comic['thumb']}}" class="card-img-top" alt="{{$comic['title']}}">
-                    <div class="card-body">
-                      <h5 class="card-title">{{$comic['title']}}</h5>
-                      <ul>
-                        @foreach ($comic['artists'] as $artist)
-                        <li>{{$artist}}</li>
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{$comic['thumb']}}" class="card-img-top" alt="{{$comic['title']}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$comic['title']}}</h5>
+                            <ul>
+                                @foreach ($comic['artists'] as $artist)
+                                    <li>{{$artist}}</li>
                             
-                        @endforeach
-                      </ul>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
-                  </div>
                     
                 @endforeach 
             </div>
